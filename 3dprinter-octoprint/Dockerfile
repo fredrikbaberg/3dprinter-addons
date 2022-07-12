@@ -12,11 +12,18 @@ ENV PATH=/data/python/octoprint/bin:${PATH}
 # Install dependencies
 RUN apt update && \
     apt install -y \
+        --no-install-recommends \
         python3-venv \
         python3-dev \
         python3-wheel \
         build-essential \
         nginx \
+        # Extras.
+        # ffmpeg \
+        # avrdude \
+        # dfu-util \
+        # dfu-programmer \
+        # stm32flash \
     && \
     apt clean
 
@@ -24,3 +31,4 @@ RUN apt update && \
 COPY rootfs /
 RUN chmod +x /etc/cont-init.d/*.sh
 RUN chmod +x /etc/services.d/*/*
+RUN chmod +x /scripts/*.sh

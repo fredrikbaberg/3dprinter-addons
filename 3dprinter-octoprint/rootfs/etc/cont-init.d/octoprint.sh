@@ -11,6 +11,8 @@
         python --version
     } || { # Otherwise create Python virtual environment.
         python3 -m venv /data/python/octoprint
+        # Install wheel to speed up future installs.
+        pip install wheel
     }
     pip install octoprint==$OCTOPRINT_VERSION
 }

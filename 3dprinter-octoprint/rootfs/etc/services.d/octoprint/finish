@@ -1,7 +1,7 @@
 #!/usr/bin/execlineb -S0
 # ==============================================================================
-# Add-on: mjpg-streamer
-# Take down the S6 supervision tree when mjpg-streamer fails
+# Add-on: 3dprinter-octoprint
+# Take down the S6 supervision tree when OctoPrint fails
 # ==============================================================================
 if -n { s6-test $# -ne 0 }
 if -n { s6-test ${1} -eq 256 }

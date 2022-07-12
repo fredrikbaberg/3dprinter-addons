@@ -2,7 +2,11 @@ accessControl:
     autologinAs: homeassistant
     autologinLocal: true
     localNetworks:
+        - 127.0.0.0/8
+        - ::1/128
         - 172.30.32.2
+api:
+    allowCrossOrigin: true
 folder:
     generated: /tmp/octoprint/generated
     timelapse_tmp: /tmp/octoprint/timelapse/tmp
@@ -11,3 +15,5 @@ server:
         serverRestartCommand: /scripts/octoprint_restart.sh
         systemRestartCommand: /scripts/system_restart.sh
         systemShutdownCommand: /scripts/system_shutdown.sh
+webcam:
+    ffmpeg: /usr/bin/ffmpeg
